@@ -3,23 +3,22 @@ const withPWA = require("next-pwa");
 const pwaConfig = require("./wb.config");
 
 const nextConfig = {
-  // https://nextjs.org/docs/basic-features/image-optimization#domains
   images: {
-    domains: ["i.scdn.co"],
+    domains: ["i.scdn.co"], // Pastikan domain sudah benar
   },
 
   async redirects() {
     return [
       {
         source: "/buy",
-        destination:
-          "",
+        destination: "/", // Isi dengan path tujuan yang benar, "/" jika kosong
         permanent: false,
       },
     ];
   },
+
   webpack: (config, { dev, isServer }) => {
-    // Replace React with Preact only in client production build
+    // Ganti React dengan Preact hanya untuk build client-side di production
     if (!dev && !isServer) {
       Object.assign(config.resolve.alias, {
         react: "preact/compat",
@@ -32,4 +31,7 @@ const nextConfig = {
   },
 };
 
-module.exports = withPlugins([[withPWA, { pwa: pwaConfig }]], nextConfig);
+module.exports = withPlugins(
+  [[withPWA, { pwa: pwaConfig }]], // Konfigurasi PWA
+  nextConfig
+);

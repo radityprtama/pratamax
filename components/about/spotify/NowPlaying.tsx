@@ -37,7 +37,7 @@ const NowPlaying = ({
         <Image
           className="rounded-md"
           src={(isPlaying && albumImageUrl) || NO_COVER}
-          alt={isPlaying ? title : "Not listening to anything"}
+          alt={isPlaying ? title || "Unknown title" : "Not listening to anything"}
           height={80}
           width={80}
         />

@@ -54,7 +54,8 @@ const MobileMenu = ({ isOpen, onClose }: MobileMenuProps) => {
             leaveFrom="opacity-100"
             leaveTo="opacity-0"
           >
-            <Dialog.Overlay className="fixed inset-0 backdrop-blur" />
+            {/* Ganti Dialog.Overlay dengan div */}
+            <div className="fixed inset-0 backdrop-blur" />
           </Transition.Child>
 
           {/* This element is to trick the browser into centering the modal contents. */}

@@ -16,7 +16,8 @@ const AboutPage = () => {
     >
       <Head title="About" />
       <div className="flex justify-center relative">
-        <style jsx global>{`
+        {/* Global styles ditambahkan menggunakan <style> tanpa atribut `jsx global` */}
+        <style>{`
           .me-picture {
             clip-path: url(#blob);
           }
