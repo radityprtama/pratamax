@@ -24,11 +24,11 @@ export async function getFileBySlug(
   const source = await serialize(content, {
     mdxOptions: {
       remarkPlugins: [
-        require("remark-slug"),
-        require("remark-code-titles"),
-        require("remark-breaks"),
+        (await import("remark-slug")).default,
+        (await import("remark-breaks")).default,
       ],
       rehypePlugins: [mdxPrism],
+      development: false,
     },
   });
   if (type === "snippet") {

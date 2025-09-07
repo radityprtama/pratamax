@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import { spline } from "@/utils/spline";
-import SimplexNoise from "simplex-noise";
+import { createNoise2D } from "simplex-noise";
 
 //https://georgefrancis.dev/writing/build-a-smooth-animated-blob-with-svg-and-js/
 interface BlobProps {
@@ -8,9 +8,9 @@ interface BlobProps {
 }
 
 const Blob = ({ id }: BlobProps) => {
-  const animation = useRef<any>();
+  const animation = useRef<number | null>(null);
   const noiseStep = 0.005;
-  const simplex = new SimplexNoise();
+  const noise2D = createNoise2D();
   function createPoints() {
     const points = [];
     // how many points do we need
@@ -56,7 +56,7 @@ const Blob = ({ id }: BlobProps) => {
   }
 
   function noise(x: number, y: number) {
-    return simplex.noise2D(x, y);
+    return noise2D(x, y);
   }
 
   const animate = () => {
@@ -97,7 +97,11 @@ const Blob = ({ id }: BlobProps) => {
   };
   useEffect(() => {
     animation.current = requestAnimationFrame(animate);
-    return () => cancelAnimationFrame(animation.current);
+    return () => {
+      if (animation.current) {
+        cancelAnimationFrame(animation.current);
+      }
+    };
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
   return (

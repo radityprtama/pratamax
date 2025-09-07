@@ -101,7 +101,7 @@ export default function Index() {
         </div>
         <div className="relative w-[300px] md:w-[400px] noselect text-center">
           <Image alt="doodle" src="/me.svg" priority width={300} height={400} />
-          <div className="absolute z-10 bottom-[-60px] md:bottom-[-50px] left-[10px] md:left-[50px]">
+          <div className="absolute z-10 bottom-[-60px] md:bottom-[-50px] left-[10px]">
             <Doodle1 />
           </div>
         </div>

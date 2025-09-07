@@ -1,5 +1,6 @@
 interface MainProps {
   className?: string;
+  children?: React.ReactNode;
 }
 import cx from "clsx";
 const Main: React.FC<MainProps> = ({ children, className, ...props }) => {

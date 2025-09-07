@@ -8,7 +8,7 @@ import { MDXPost } from "@/types/post";
 
 import { GetStaticPaths, GetStaticProps } from "next";
 import { MDXRemote } from "next-mdx-remote";
-import { BlogJsonLd } from "next-seo";
+import { ArticleJsonLd } from "next-seo";
 import { ID, EN } from "@/components/flags";
 import Tippy from "@tippyjs/react";
 import "tippy.js/dist/tippy.css";
@@ -44,7 +44,7 @@ const Post = ({ source, meta }: MDXPost) => {
           },
         }}
       />
-      <BlogJsonLd
+      <ArticleJsonLd
         url={config.baseUrl + "/" + meta.slug}
         title={meta.title}
         authorName={"Raditya Pratama"}

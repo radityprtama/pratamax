@@ -1,6 +1,7 @@
 import Link from "./Link";
-import { MDXProviderComponents } from "@mdx-js/react";
 import Image, { ImageProps } from "next/image";
+import { ReactNode } from "react";
+
 //TODO: type definition for each record
 const CustomImage = ({ alt, ...props }: ImageProps) => {
   return (
@@ -11,7 +12,11 @@ const CustomImage = ({ alt, ...props }: ImageProps) => {
   );
 };
 
-const MDXComponents: MDXProviderComponents = {
+interface MDXComponents {
+  [key: string]: React.ComponentType<any>;
+}
+
+const MDXComponents: MDXComponents = {
   Img: CustomImage,
   a: ({ href, children, ...props }) => {
     const isExternal = !(href?.startsWith("/") || href?.startsWith("#"));

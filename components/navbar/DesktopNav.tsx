@@ -11,9 +11,9 @@ const DesktopNav = () => (
     <div className="flex max-w-5xl mx-auto items-center">
       <Link
         href="/"
-        className="font-doodle font-semibold text-center text-xl py-2 md:py-4 px-2 hover:bg-gray-300 dark:hover:bg-light transition duration-200 ease-in-out"
+        className="font-doodle font-semibold text-center text-xl py-2 md:py-4 px-4 hover:bg-gray-300 dark:hover:bg-light transition duration-200 ease-in-out"
       >
-        Pratama.dev
+        <span className="whitespace-nowrap">{"{ Raditya }"}</span>
       </Link>
       <div className="hidden md:flex w-full justify-between items-center ">
         <div className="flex">

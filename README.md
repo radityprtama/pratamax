@@ -9,4 +9,4 @@
 
 ## License
 
-Licensed under [MIT License, Copyright (c) 2024 Raditya](./LICENSE)
+Licensed under [MIT License, Copyright (c) 2025 Raditya](./LICENSE)

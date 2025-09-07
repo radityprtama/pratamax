@@ -37,7 +37,7 @@ function MyApp({ Component, pageProps, router }: AppProps) {
       <DefaultSeo
         description={config.description}
         defaultTitle="Hi i'm Raditya."
-        titleTemplate={`%s · Pratama.dev`}
+        titleTemplate={`%s · Raditya`}
         openGraph={{
           title: "Hi i'm Raditya.",
           description: config.description,
@@ -65,7 +65,7 @@ function MyApp({ Component, pageProps, router }: AppProps) {
       />
       <div className="flex flex-col min-h-screen">
         <Navbar />
-        <AnimatePresence exitBeforeEnter>
+        <AnimatePresence mode="wait">
           <motion.main
             key={router.route}
             className="flex flex-col h-full flex-grow"

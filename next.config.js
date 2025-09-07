@@ -4,14 +4,21 @@ const pwaConfig = require("./wb.config");
 
 const nextConfig = {
   images: {
-    domains: ["i.scdn.co"], // Pastikan domain sudah benar
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "i.scdn.co",
+        port: "",
+        pathname: "/**",
+      },
+    ],
   },
 
   async redirects() {
     return [
       {
         source: "/buy",
-        destination: "/", // Isi dengan path tujuan yang benar, "/" jika kosong
+        destination: "/",
         permanent: false,
       },
     ];
@@ -28,6 +35,10 @@ const nextConfig = {
     }
 
     return config;
+  },
+
+  experimental: {
+    mdxRs: true,
   },
 };
 

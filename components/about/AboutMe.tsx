@@ -13,7 +13,7 @@ const AboutMe = () => {
         friend you maybe know me as <b>Zurra</b>.
       </p>
       <p>
-      I grew up in a city called{" "}
+        I grew up in a city called{" "}
         <Link
           className="underline"
           isExternal
@@ -30,14 +30,25 @@ const AboutMe = () => {
           SMK Nusantara 1
         </Link>{" "}
         with my major in{" "}
-          <Link className="underline" href="https://www.gamelab.id/news/1809-mengenal-jurusan-pplg-definisi-keunggulan-dan-prospek-kerjanya" isExternal>
-        <i>PPLG (Software & Game Development)</i>
-        </Link>, and with that I hope after graduate from this school I will become a programming expert (hopefully).
+        <Link
+          className="underline"
+          href="https://www.gamelab.id/news/1809-mengenal-jurusan-pplg-definisi-keunggulan-dan-prospek-kerjanya"
+          isExternal
+        >
+          <i>RPL (Software Engineering)</i>
+        </Link>
+        , and with that I hope after graduate from this school I will become a
+        programming expert (hopefully).
       </p>
       <p>
-        I love exploring everything related to technology. And i like
-        join many community and orgs to expand my knowledge, besides liking coding <b>I also like about server, I also made pterodactyl panel, a dashboard for panels</b>, besides that I am also interested in Design, I also like to design such as logos, posters, etc., the point is I really like technology.
-
+        I love exploring everything related to technology. And i like join many
+        community and orgs to expand my knowledge, besides liking coding{" "}
+        <b>
+          I also like about server, I also made pterodactyl panel, a dashboard
+          for panels
+        </b>
+        , besides that I am also interested in Design, I also like to design
+        such as logos, posters, etc., the point is I really like technology.
       </p>
     </section>
   );
