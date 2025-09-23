@@ -1,4 +1,5 @@
 import Link from "@/components/Link";
+
 const AboutMe = () => {
   return (
     <section>
@@ -38,18 +39,18 @@ const AboutMe = () => {
           <i>RPL (Software Engineering)</i>
         </Link>
         , through this major, I will learn a lot about programming and
-        application development. I'm currently in my last year of high school
-        and I'm very passionate.
+        application development. I&apos;m currently in my last year of high
+        school and I&apos;m very passionate.
       </p>
       <p>
         I love exploring everything related to technology. And i like join many
         community and orgs to expand my knowledge, besides liking coding{" "}
         <b>
-          I'm passionate about UI/UX Design - I've like created many things. I'm
-          also interested in design and regularly create logos, posters, and
-          other visual materials
+          I&apos;m passionate about UI/UX Design - I&apos;ve like created many
+          things. I&apos;m also interested in design and regularly create logos,
+          posters, and other visual materials
         </b>
-        , in short, I'm a tech enthusiast who loves to learn new things.
+        , in short, I&apos;m a tech enthusiast who loves to learn new things.
       </p>
     </section>
   );
