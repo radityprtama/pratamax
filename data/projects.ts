@@ -32,9 +32,6 @@ const typescript = {
 const php = {
   name: "php",
 };
-const html = {
-  name: "html",
-};
 
 const project: ProjectType[] = [
   {
