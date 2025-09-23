@@ -21,7 +21,7 @@ export default [
   },
   // {
   //  name: "Polywork",
-  //  url: "https://timeline.pratama.dev/",
+  //  url: "https://timeline.radityarise.my.id
   // },
   // {
   //  name: "Spotify",

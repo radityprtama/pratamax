@@ -18,7 +18,7 @@ export const links: NavLink[] = [
   // },
   {
     text: "Timeline",
-    url: "https://timeline.pratama.dev",
+    url: "https://timeline.radityarise.my.id",
   },
   {
     text: "About",
