@@ -1,0 +1,308 @@
+---
+title: "The GitHub Repository That Taught Me More Than 4 Years of Computer Science"
+publishedAt: "2025-01-20"
+image: "/blog/github-learning/og.jpg"
+description: "How diving deep into one open-source project completely transformed my understanding of software engineering and landed me my dream job."
+lang: "en"
+---
+
+<Img
+  src="/blog/github-learning/hero.jpg"
+  width={1200}
+  height={600}
+  alt="Me staring at code at 3 AM wondering why I chose the hard path (spoiler: totally worth it)"
+/>
+
+Three months ago, I was just another bootcamp graduate with impostor syndrome, frantically applying to junior developer positions. Today, I'm a full-stack developer at a company I thought was way out of my league. The difference? One GitHub repository that I obsessively studied for 6 weeks.
+
+This is the story of how reading code taught me more about real software engineering than any tutorial, course, or degree program ever could.
+
+## The Repository That Changed Everything
+
+The project was **[Supabase](https://github.com/supabase/supabase)** – an open-source Firebase alternative. At first glance, it seemed way above my level. TypeScript? Monorepo architecture? Docker compose files with 50+ services? I almost clicked away.
+
+But something made me stay. Maybe it was the clean README, or the fact that it solved real problems I'd encountered. Whatever it was, I decided to do something different: instead of skimming through it, I would understand it **completely**.
+
+## Week 1: Lost in the Maze
+
+My first attempt was humbling. I cloned the repo, ran `npm install`, and... nothing made sense.
+
+```
+├── apps/
+│   ├── www/              # What's this?
+│   ├── studio/          # And this?
+│   └── docs/            # Docs app?
+├── packages/
+│   ├── shared/          # Shared what?
+│   └── ui/              # UI components?
+├── docker/              # 12 Docker files?!
+└── supabase/           # More config files?
+```
+
+I was overwhelmed. But instead of giving up, I made a decision that changed my approach to learning forever: **I would document everything I learned**.
+
+I created a markdown file: `supabase-learning-log.md` and started writing:
+
+```markdown
+# Day 1
+
+- `apps/www` seems to be the marketing website (Next.js)
+- `apps/studio` is the dashboard app (also Next.js)
+- `packages/` contains shared code between apps
+- Still confused about the overall architecture
+
+# Questions:
+
+- How do all these pieces connect?
+- What's a monorepo and why use it?
+- How does the build process work?
+```
+
+## Week 2: The "Aha" Moments Started
+
+By documenting my confusion, I forced myself to find answers. Each question led me down rabbit holes that taught me more than any course:
+
+### Discovery 1: Monorepo Architecture
+
+I learned that Supabase uses **Turborepo** to manage multiple related projects in one repository. This wasn't just academic knowledge—I could see exactly how they:
+
+- Share UI components between apps
+- Manage dependencies across projects
+- Coordinate builds and deployments
+
+### Discovery 2: Real-World TypeScript
+
+Forget simple tutorial examples. This codebase showed me:
+
+- Advanced type patterns I'd never seen
+- How to type complex database queries
+- Generic types that actually solve real problems
+
+```typescript
+// From their codebase - this blew my mind
+export interface Database {
+  public: {
+    Tables: {
+      users: {
+        Row: {
+          id: string;
+          email: string;
+          created_at: string;
+        };
+        Insert: {
+          id?: string;
+          email: string;
+          created_at?: string;
+        };
+        Update: {
+          id?: string;
+          email?: string;
+          created_at?: string;
+        };
+      };
+    };
+  };
+}
+```
+
+### Discovery 3: Testing in the Real World
+
+Their test suite taught me more about testing than any "testing course":
+
+- Integration tests that actually matter
+- How to mock external services
+- Testing strategies for full-stack applications
+
+## Week 3-4: Contributing and Understanding
+
+Reading code passively wasn't enough. I needed to contribute. I started small:
+
+1. **Fixed typos in documentation** (yes, seriously)
+2. **Added missing TypeScript types** in minor components
+3. **Improved error messages** in edge cases
+
+Each pull request taught me:
+
+- How open-source collaboration actually works
+- Code review processes at scale
+- Writing code that others can maintain
+
+But the real learning happened in their Discord community. I started answering questions from other users, which forced me to understand the codebase even deeper.
+
+## Week 5-6: Building My Own Version
+
+The ultimate test: could I build something similar? I spent two weeks creating a simplified version of Supabase, focusing on:
+
+- Database management UI
+- Real-time subscriptions
+- Authentication flow
+
+I called it "MiniSupabase" and [open-sourced it](https://github.com/radityprtama/mini-supabase). The process revealed gaps in my understanding that I never would have discovered just by reading.
+
+## What Made This Different from Traditional Learning
+
+### 1. **Real Context, Not Toy Examples**
+
+Instead of learning React with a todo app, I learned it by studying how Supabase built their dashboard with:
+
+- Complex state management
+- Real API integrations
+- Performance optimizations that matter
+
+### 2. **Seeing the Full Stack**
+
+Tutorials teach you pieces in isolation. This repository showed me how everything connects:
+
+- Frontend talking to APIs
+- Database schema evolution
+- Deployment and DevOps
+- Monitoring and observability
+
+### 3. **Learning from the Best**
+
+The Supabase team includes engineers from GitHub, Stripe, and other top companies. Their code reflects industry best practices you won't learn in bootcamps.
+
+### 4. **Understanding Trade-offs**
+
+Academic learning teaches "right" and "wrong." Real codebases teach trade-offs:
+
+- Why they chose Postgres over MongoDB
+- When to use server components vs. client components
+- Performance vs. developer experience decisions
+
+## The Job Interview That Changed Everything
+
+Six weeks after starting my deep dive, I interviewed at a startup building developer tools. The conversation went something like this:
+
+**Interviewer**: "Tell me about a challenging project you've worked on."
+
+**Me**: "I spent the last month understanding how Supabase's real-time engine works..."
+
+I proceeded to explain their architecture, the challenges they solved, and how I'd approach similar problems. I showed them my learning log, my contributions, and my simplified implementation.
+
+**Interviewer**: "Most junior developers show me todo apps. You're showing me enterprise architecture understanding."
+
+I got the job. More importantly, I got it because I demonstrated something beyond coding skills: the ability to understand complex systems and learn independently.
+
+## The Repositories That Teach You the Most
+
+Not all open-source projects are great learning resources. Here's what to look for:
+
+### 📚 **Great for Learning:**
+
+- **[Supabase](https://github.com/supabase/supabase)**: Full-stack architecture
+- **[Vercel's Next.js](https://github.com/vercel/next.js)**: React framework internals
+- **[Remix](https://github.com/remix-run/remix)**: Web fundamentals done right
+- **[Prisma](https://github.com/prisma/prisma)**: Database tooling and type safety
+- **[tRPC](https://github.com/trpc/trpc)**: TypeScript-first API design
+
+### ⚠️ **Avoid These (for learning):**
+
+- Massive legacy codebases with technical debt
+- Projects without good documentation
+- Repositories that haven't been updated recently
+- Projects with inconsistent coding standards
+
+## My Learning Framework (You Can Copy This)
+
+Here's the exact process I use now for learning from any repository:
+
+### Phase 1: First Impressions (Day 1)
+
+```markdown
+# Repository: [Name]
+
+## First impressions:
+
+- What problem does this solve?
+- What's the tech stack?
+- How is the code organized?
+- What confused me immediately?
+```
+
+### Phase 2: Deep Dive (Week 1)
+
+```markdown
+## Architecture Understanding:
+
+- Draw the system architecture
+- Map out data flow
+- Identify key abstractions
+- List technical decisions and why they made them
+```
+
+### Phase 3: Active Contribution (Week 2-3)
+
+- Fix small bugs
+- Improve documentation
+- Add missing tests
+- Engage with the community
+
+### Phase 4: Build Your Own (Week 4)
+
+- Create a simplified version
+- Focus on the core concepts
+- Document what you learned
+- Share it publicly
+
+## The Skills This Actually Taught Me
+
+By the end of my deep dive, I had inadvertently learned:
+
+**Technical Skills:**
+
+- Advanced TypeScript patterns
+- Monorepo management
+- Database design principles
+- Real-time systems architecture
+- Testing strategies that scale
+- DevOps and deployment pipelines
+
+**Soft Skills:**
+
+- How to read and understand complex codebases
+- Technical communication through documentation
+- Collaboration in open-source environments
+- Systems thinking and architectural decision-making
+
+## Why This Works Better Than Courses
+
+Don't get me wrong—courses have their place. But real codebases teach you things no course can:
+
+1. **How to deal with complexity** that evolved over time
+2. **Real-world constraints** and their solutions
+3. **Code archaeology skills** – understanding code you didn't write
+4. **The messy reality** of software development
+5. **Industry standards** and best practices in context
+
+## Your 30-Day Challenge
+
+Ready to try this approach? Here's your challenge:
+
+1. **Pick a repository** that solves a problem you care about
+2. **Clone it locally** and get it running
+3. **Start a learning log** documenting everything you discover
+4. **Make your first contribution** (even if it's just fixing a typo)
+5. **Build something inspired by it** and share your learnings
+
+The repository doesn't have to be huge or famous. Some of my best learning experiences came from smaller, well-architected projects.
+
+## The Long-Term Impact
+
+This learning approach didn't just get me a job—it fundamentally changed how I think about software engineering. Now, when I encounter new technologies or complex problems, my first instinct is to find the best real-world implementation and study it deeply.
+
+It's the difference between knowing syntax and understanding systems. Between following tutorials and solving real problems. Between being a code writer and being a software engineer.
+
+## Start Your Journey Today
+
+Find a repository that intimidates you slightly. Clone it. Start documenting what confuses you. I promise that six weeks from now, you'll be amazed at what you understand.
+
+The best developers aren't those who memorize APIs—they're those who can understand and contribute to complex systems built by others.
+
+Your learning journey is one `git clone` away.
+
+---
+
+**What repository are you going to dive into?** Let me know on [Twitter](https://twitter.com/unsqin_) – I'd love to follow your learning journey and maybe even contribute together!
+
+**Want to see my learning logs?** I've made all my repository study notes public on [GitHub](https://github.com/radityprtama/learning-logs). Feel free to use them as templates for your own deep dives.
